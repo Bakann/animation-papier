@@ -1,0 +1,68 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "kirigami_couture/src_s0001.png"
+    },
+    "_meta": {
+      "title": "Frame Flow (pose)"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "kirigami_couture/ancre_style.png"
+    },
+    "_meta": {
+      "title": "Référence de style (ancre)"
+    }
+  },
+  "3": {
+    "class_type": "ImageBatch",
+    "inputs": {
+      "image1": [
+        "1",
+        0
+      ],
+      "image2": [
+        "2",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Frame + ancre"
+    }
+  },
+  "4": {
+    "class_type": "OpenAIGPTImage1",
+    "inputs": {
+      "prompt": "You receive two images.\nIMAGE 1 is one frame of an animation: follow it EXACTLY for the pose, body proportions, position of the character in the frame, camera framing and composition. Every frame of the film must line up, so do not move, crop, zoom or re-pose anything.\nIMAGE 2 is the approved style reference: match its style, materials, colour palette, lighting, background treatment and character design EXACTLY (same face, eyes, hairstyle, earrings, shoes).\n\nRedraw IMAGE 1 as a single frame of a stop-motion film in a \"kirigami couture\" style:\n- everything is built from layered, precisely cut paper: kirigami folds and cut-outs, visible paper edges and thickness, soft cast shadows between paper layers, matte paper textures;\n- the elegance of a haute-couture atelier: refined, delicate, couture craftsmanship;\n- the geometric colour-block dress (red, blue, yellow and ivory panels separated by black lines) is assembled from cut coloured paper panels, with the same panel layout as in IMAGE 1;\n- the face keeps the anime design of IMAGE 2.\n\nDo not add text, letters, logos or extra characters. Vertical 9:16 frame.",
+      "seed": 1,
+      "quality": "medium",
+      "background": "opaque",
+      "size": "1152x2048",
+      "n": 1,
+      "image": [
+        "3",
+        0
+      ],
+      "model": "gpt-image-2"
+    },
+    "_meta": {
+      "title": "GPT Image — kirigami couture"
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ],
+      "filename_prefix": "kirigami_couture/r"
+    },
+    "_meta": {
+      "title": "Enregistrer"
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "__BASE__"
+    },
+    "_meta": {
+      "title": "Pose cible — cadre entier 720 × 1280"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "__MASQUE_FLOW__"
+    },
+    "_meta": {
+      "title": "Silhouette Flow — autorité géométrique"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "__MASTER__"
+    },
+    "_meta": {
+      "title": "Escarpin master transparent — aspect seulement"
+    }
+  },
+  "4": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ],
+      "channel": "red"
+    },
+    "_meta": {
+      "title": "Lire la silhouette Flow"
+    }
+  },
+  "5": {
+    "class_type": "InvertMask",
+    "inputs": {
+      "mask": [
+        "3",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "Alpha du master (LoadImage inverse la transparence)"
+    }
+  },
+  "6": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "5",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Préparer alpha"
+    }
+  },
+  "7": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "3",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 84,
+      "height": 86,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Échelle du master — calage manuel"
+    }
+  },
+  "8": {
+    "class_type": "ImageScale",
+    "inputs": {
+      "image": [
+        "6",
+        0
+      ],
+      "upscale_method": "lanczos",
+      "width": 84,
+      "height": 86,
+      "crop": "disabled"
+    },
+    "_meta": {
+      "title": "Même échelle pour alpha"
+    }
+  },
+  "9": {
+    "class_type": "ImageToMask",
+    "inputs": {
+      "image": [
+        "8",
+        0
+      ],
+      "channel": "red"
+    },
+    "_meta": {
+      "title": "Alpha redimensionné"
+    }
+  },
+  "10": {
+    "class_type": "CropMask",
+    "inputs": {
+      "mask": [
+        "4",
+        0
+      ],
+      "x": 352,
+      "y": 1151,
+      "width": 84,
+      "height": 86
+    },
+    "_meta": {
+      "title": "Silhouette à la position du pied"
+    }
+  },
+  "11": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "10",
+        0
+      ],
+      "source": [
+        "9",
+        0
+      ],
+      "x": 0,
+      "y": 0,
+      "operation": "multiply"
+    },
+    "_meta": {
+      "title": "Intersection master × silhouette Flow"
+    }
+  },
+  "12": {
+    "class_type": "ImageCompositeMasked",
+    "inputs": {
+      "destination": [
+        "1",
+        0
+      ],
+      "source": [
+        "7",
+        0
+      ],
+      "x": 352,
+      "y": 1151,
+      "resize_source": false,
+      "mask": [
+        "11",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Guide chaussure — pixels extérieurs conservés"
+    }
+  },
+  "13": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "filename_prefix": "kirigami_couture/chaussure_master/guide"
+    },
+    "_meta": {
+      "title": "Exporter le guide gratuit"
+    }
+  },
+  "14": {
+    "class_type": "SolidMask",
+    "inputs": {
+      "value": 0.0,
+      "width": 720,
+      "height": 1280
+    },
+    "_meta": {
+      "title": "Masque plein cadre vide"
+    }
+  },
+  "15": {
+    "class_type": "MaskComposite",
+    "inputs": {
+      "destination": [
+        "14",
+        0
+      ],
+      "source": [
+        "11",
+        0
+      ],
+      "x": 352,
+      "y": 1151,
+      "operation": "add"
+    },
+    "_meta": {
+      "title": "Zone de modification autorisée"
+    }
+  },
+  "16": {
+    "class_type": "MaskToImage",
+    "inputs": {
+      "mask": [
+        "15",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "Afficher le masque final"
+    }
+  },
+  "17": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "16",
+        0
+      ],
+      "filename_prefix": "kirigami_couture/chaussure_master/masque"
+    },
+    "_meta": {
+      "title": "Exporter le masque de contrôle"
+    }
+  }
+}

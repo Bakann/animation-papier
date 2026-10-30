@@ -1,0 +1,43 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "kirigami_couture/src_s0001.png"
+    },
+    "_meta": {
+      "title": "Frame Flow (pose)"
+    }
+  },
+  "4": {
+    "class_type": "OpenAIGPTImage1",
+    "inputs": {
+      "prompt": "This image is one frame of an animation. Keep EXACTLY the pose, body proportions, position of the character in the frame, camera framing and composition.\n\nRedraw it as a single frame of a stop-motion film in a \"kirigami couture\" style:\n- everything is built from layered, precisely cut paper: kirigami folds and cut-outs, visible paper edges and thickness, soft cast shadows between paper layers, matte paper textures;\n- the elegance of a haute-couture atelier: refined, delicate, couture craftsmanship;\n- the geometric colour-block dress (red, blue, yellow and ivory panels separated by black lines) is assembled from cut coloured paper panels, with the same panel layout;\n- the character keeps a clean anime face design.\n\nDo not add text, letters, logos or extra characters. Vertical 9:16 frame.",
+      "seed": 1,
+      "quality": "medium",
+      "background": "opaque",
+      "size": "1152x2048",
+      "n": 4,
+      "image": [
+        "1",
+        0
+      ],
+      "model": "gpt-image-2"
+    },
+    "_meta": {
+      "title": "GPT Image — propositions d'ancre"
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ],
+      "filename_prefix": "kirigami_couture/ancre"
+    },
+    "_meta": {
+      "title": "Enregistrer"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+This image is one frame of an animation. Keep EXACTLY the pose, body proportions, position of the character in the frame, camera framing and composition.
+
+Redraw it as a single frame of a stop-motion film in a "kirigami couture" style:
+- everything is built from layered, precisely cut paper: kirigami folds and cut-outs, visible paper edges and thickness, soft cast shadows between paper layers, matte paper textures;
+- the elegance of a haute-couture atelier: refined, delicate, couture craftsmanship;
+- the geometric colour-block dress (red, blue, yellow and ivory panels separated by black lines) is assembled from cut coloured paper panels, with the same panel layout;
+- the character keeps a clean anime face design.
+
+Do not add text, letters, logos or extra characters. Vertical 9:16 frame.

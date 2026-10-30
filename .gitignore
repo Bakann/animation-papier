@@ -1,0 +1,20 @@
+# Données de travail non publiées (droits d'auteur, taille, réponses brutes des services)
+entree/
+travail/
+sortie/
+refs/
+reponses_gemini/
+requetes_gemini/
+*.mp4
+*.mov
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets
+.env
+*.key
+
+# Système
+.DS_Store

@@ -1,0 +1,31 @@
+{
+  "video": "entree/source_animation.mp4",
+  "fps": 24,
+  "pas": 3,
+  "plans": {
+    "test": {
+      "debut_s": 0.0,
+      "duree_s": 2.0
+    },
+    "complet": {
+      "debut_s": 0.0,
+      "duree_s": null
+    }
+  },
+  "backend": "comfy",
+  "comfy_url": "http://127.0.0.1:8188",
+  "comfy_sous_dossier": "kirigami_couture",
+  "modele": "gemini-3-pro-image",
+  "qualite": "2K",
+  "taille": "9:16 / 2K",
+  "variantes_ancre": 4,
+  "ancre": "refs/style_details_coiffure_fixe.png",
+  "prompt": "prompts/kirigami_couture.txt",
+  "prompt_ancre": "prompts/kirigami_couture_ancre.txt",
+  "cout_estime_usd_par_image": 0.1608,
+  "sortie_largeur": 720,
+  "sortie_hauteur": 1280,
+  "grain": 5,
+  "workflow_redessin": "workflows/redessin_nano_banana_pro_api.json",
+  "arreter_sur_erreur": true
+}

@@ -1,0 +1,18 @@
+{
+  "actif": true,
+  "source": "travail/pilote_chaussure_master_10/out/r0010.png",
+  "taille_source": [1536, 2752],
+  "master": "travail/pilote_chaussure_master_10/imagegen/master_chaussure_geometrique.png",
+  "crop_xywh": [704, 2320, 320, 400],
+  "rectangle_retouche_dans_crop": [104, 234, 203, 286],
+  "rayon_coins": 8,
+  "raccord_px": 2,
+  "preserver_depuis_y": 2620,
+  "retouche_test_existante": "travail/pilote_chaussure_master_10/imagegen/retouche_pieds_integree_brute.png",
+  "prompt": "prompts/correctif_boucle_master.txt",
+  "modele": "gemini-3-pro-image",
+  "qualite": "2K",
+  "aspect_ratio": "4:5",
+  "cout_estime_usd_par_image": 0.16,
+  "note": "Calage de la pose 10 uniquement. Définir un nouveau crop et masque pour chaque autre pose."
+}

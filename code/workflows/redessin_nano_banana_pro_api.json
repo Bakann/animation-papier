@@ -1,0 +1,59 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "__SOURCE__"
+    },
+    "_meta": {
+      "title": "Flow : pose et cadrage"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "__ANCRE__"
+    },
+    "_meta": {
+      "title": "Reference de style fixe"
+    }
+  },
+  "3": {
+    "class_type": "ImageBatch",
+    "inputs": {
+      "image1": [
+        "1",
+        0
+      ],
+      "image2": [
+        "2",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ],
+      "filename_prefix": "kirigami_couture/comparatif/r"
+    }
+  },
+  "4": {
+    "class_type": "GeminiImage2Node",
+    "inputs": {
+      "prompt": "__PROMPT__",
+      "model": "gemini-3-pro-image-preview",
+      "seed": "__SEED__",
+      "aspect_ratio": "9:16",
+      "resolution": "2K",
+      "response_modalities": "IMAGE",
+      "images": [
+        "3",
+        0
+      ],
+      "system_prompt": ""
+    }
+  }
+}
