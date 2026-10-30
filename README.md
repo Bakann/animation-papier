@@ -29,8 +29,15 @@ flowchart LR
 | Suivre les 14 essais, un par un, avec leurs résultats | [3. Journal des essais](docs/03-journal-des-essais.md) |
 | Connaître les leçons à retenir et les pistes restantes | [4. Ce que nous avons appris](docs/04-ce-que-nous-avons-appris.md) |
 | Voir comment deux IA et un humain ont travaillé ensemble | [5. Méthode de travail](docs/05-methode-de-travail.md) |
+| Comprendre le rôle de ComfyUI, ses nœuds et son utilisation dans Desktop | [6. ComfyUI, l’atelier technique](docs/06-comfyui.md) |
 | Chercher un mot | [Glossaire](docs/glossaire.md) |
 | Lire le code | [Le code](code/README.md) |
+
+## ComfyUI, l’atelier technique
+
+**ComfyUI occupe une place importante dans la chaîne de travail.** Ses graphes de nœuds ont servi à appeler GPT Image, Nano Banana Pro et FLUX.2, puis à préparer un guide de chaussure et à réinsérer des retouches sous masque. Les scripts Python assurent le pilotage, les journaux et les contrôles.
+
+Le rôle de ComfyUI a évolué : les derniers essais de génération passaient directement par Google, tandis que les blocs locaux de préparation et de correction restaient disponibles. La [page dédiée](docs/06-comfyui.md) détaille les recettes, les circuits payants et locaux, les limites et leur ouverture dans Comfy Desktop.
 
 ## Les résultats en bref
 

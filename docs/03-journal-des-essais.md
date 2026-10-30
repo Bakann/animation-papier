@@ -186,6 +186,8 @@ Plus le résidu est petit, plus les deux dessins sont cohérents.
 
 **L'idée.** Jusque-là, les demandes passaient par ComfyUI. Le projet passe à un appel **direct** au service de Google, avec une clé personnelle. Avantages : plus de contrôle, et la possibilité d'essayer des fonctions avancées (voir l'essai 14).
 
+Ce changement concerne le circuit de génération : ComfyUI sert aussi aux guides de chaussure et aux corrections locales. Le [chapitre 6](06-comfyui.md) détaille ces usages et leur articulation avec Google direct.
+
 **Ce qui a été fait.** Un nouveau petit programme envoie la demande, puis enregistre **la réponse complète** de Google sur le disque. Ainsi, si quelque chose se passe mal après coup, on peut relire la réponse sans repayer un dessin.
 
 **Résultat.** Ça marche. Google renvoie un **JPEG**, qui peut perdre du détail à la compression, et non un **PNG**, qui n'ajoute pas de perte. Aucun réglage de sortie PNG pris en charge n'avait été identifié pour l'API Developer de ce circuit. La conversion locale en PNG ne restaure pas les détails déjà perdus. Une contribution de cette compression à la variation perçue reste possible, mais n'a pas été mesurée ici.

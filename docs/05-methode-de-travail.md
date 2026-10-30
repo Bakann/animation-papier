@@ -1,6 +1,6 @@
 # 5. Méthode de travail : deux IA et un humain
 
-[← Chapitre précédent](04-ce-que-nous-avons-appris.md) · [Accueil](../README.md) · [Glossaire →](glossaire.md)
+[← Chapitre précédent](04-ce-que-nous-avons-appris.md) · [Accueil](../README.md) · [ComfyUI →](06-comfyui.md)
 
 Ce projet a été mené par l'auteur avec deux assistants d'IA aux rôles différents. Cette organisation est intéressante en elle-même, parce que les deux assistants se sont **trompés plusieurs fois**, et que la plupart des erreurs ont été rattrapées grâce aux relectures croisées.
 
@@ -59,4 +59,4 @@ Voici des exemples réels de corrections. Ils montrent qu'une affirmation sûre 
 - **Garder un journal daté** de chaque essai : ce qu'on a fait, ce qu'on a vu, ce que ça a coûté.
 - **Accepter de s'être trompé** et le noter : une correction écrite évite qu'une autre personne refasse la même erreur.
 
-[Glossaire →](glossaire.md)
+[Chapitre suivant : ComfyUI, l’atelier technique →](06-comfyui.md) · [Glossaire](glossaire.md)

@@ -11,7 +11,7 @@ Les mots techniques utilisés dans cette documentation, par ordre alphabétique.
 | **Animation « en 3 »** | Chaque dessin est montré pendant 3 images de suite. À 24 images par seconde, on voit donc 8 dessins différents par seconde. |
 | **API** | Porte d'entrée qui permet à un programme d'utiliser un service sur Internet, par exemple demander un dessin à une IA. Un **appel d'API** est une demande envoyée par cette porte. |
 | **Base / finition** | Deux passes de dessin : la base fixe la pose et le costume, la finition ajoute le relief papier. |
-| **ComfyUI** | Logiciel qui enchaîne des opérations sur des images sous forme de boîtes reliées par des fils. |
+| **ComfyUI** | Logiciel qui enchaîne des opérations sur des images sous forme de boîtes reliées par des fils. Dans le projet : accès aux modèles, guides et réinsertion des retouches. Voir le [chapitre 6](06-comfyui.md). |
 | **Composition (ou incrustation)** | Poser le personnage détouré sur un décor. |
 | **Consigne (prompt)** | Texte qui décrit à l'IA ce qu'on veut obtenir. |
 | **Dépôt Git** | Dossier dont Git conserve l'historique complet des versions. GitHub est un site qui héberge des dépôts. |
@@ -32,6 +32,8 @@ Les mots techniques utilisés dans cette documentation, par ordre alphabétique.
 | **Modèle** | Le « cerveau » d'une IA, le programme entraîné lui-même. Nano Banana Pro, GPT Image et FLUX sont des modèles. |
 | **Multi-tour (conversation)** | Façon d'utiliser une IA en lui renvoyant tout l'échange précédent, pour qu'elle tienne compte du contexte. |
 | **Normalisation** | Mettre toutes les images au même format et à la même taille avant de les comparer. |
+| **Nœud** | Boîte d’un workflow qui réalise une opération, par exemple charger une image, découper un détail ou appeler une IA. |
+| **Partner Node** | Nœud ComfyUI qui appelle un modèle distant et peut consommer des crédits Comfy. |
 | **Pixel** | Plus petit point d'une image numérique. Les images de travail du projet font 720 pixels de large sur 1280 de haut. |
 | **Planche** | Une seule image qui contient plusieurs dessins, par exemple quatre poses en 2 × 2 cases. |
 | **Propagation** | Transporter une matière approuvée d'une image vers les suivantes en la déformant pour suivre le mouvement. |
@@ -45,3 +47,4 @@ Les mots techniques utilisés dans cette documentation, par ordre alphabétique.
 | **Timeout (délai dépassé)** | Une demande restée sans réponse au-delà du temps prévu. On ne sait pas si elle a été traitée et facturée. |
 | **Token** | Petite unité de texte ou d'image comptée par les services d'IA pour calculer le prix d'une demande. |
 | **Vidéo-à-vidéo** | IA qui prend une vidéo entière et la redessine dans un autre style en gardant le mouvement. |
+| **Workflow** | Recette de traitement décrite par des nœuds et leurs connexions, enregistrable dans un fichier JSON. |

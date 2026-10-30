@@ -73,7 +73,7 @@ Pourquoi un **fond vert** ? C'est la technique de l'incrustation, utilisée au c
 
 ## Les outils autour de l'IA
 
-- **ComfyUI** : un logiciel qui permet d'enchaîner des opérations sur des images sous forme de « boîtes » reliées par des fils. Il a servi au début pour envoyer les demandes aux IA.
+- **ComfyUI** : l’atelier de nœuds du projet. Il a servi à appeler les modèles d’IA, puis à préparer des guides et à réinsérer des corrections locales, y compris après le passage à Google direct. Le [chapitre 6](06-comfyui.md) détaille son rôle et son utilisation dans Desktop.
 - **Python** : le langage de programmation des scripts du projet (voir [le code](../code/README.md)).
 - **ffmpeg** : un outil gratuit pour découper et monter des vidéos.
 - **Git** : un outil qui garde l'historique de toutes les versions des fichiers d'un projet. Ce dépôt en est un.

@@ -4,6 +4,8 @@
 
 Ce dossier contient une sélection des programmes écrits pendant l'expérience, en **Python**, publiée pour la lecture et l'étude. Ce n'est pas une reproduction autonome de tous les essais : vidéo, références, dessins intermédiaires et plusieurs préparateurs/compositeurs propres aux séances ne sont pas inclus. Les réglages qui renvoient à ces données ne sont pas exécutables tels quels.
 
+Le [chapitre consacré à ComfyUI](../docs/06-comfyui.md) explique le rôle des nœuds, leur pilotage par les scripts et l’ouverture des recettes dans Desktop, du premier redessin aux blocs locaux de correction.
+
 ## Organisation
 
 ```
