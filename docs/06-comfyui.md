@@ -43,6 +43,12 @@ Le [journal des essais](03-journal-des-essais.md) présente les observations art
 
 Le graphe de redessin comporte cinq nœuds. Le nom technique du nœud GPT est historique : `OpenAIGPTImage1` ; le modèle choisi dans la recette est bien `gpt-image-2`.
 
+![Vue d’ensemble dans Comfy Desktop : pose Flow, ancre, regroupement, modèle et enregistrement](../images/comfyui/01_redessin_vue.png)
+
+*Capture de Comfy Desktop : suis les fils bleus de gauche à droite. La pose (1) et l’ancre (2) sont réunies (3), envoyées au modèle (4), puis le dessin est enregistré (5). Les repères blancs sur la pose sont des guides de cadrage.*
+
+Pour rendre les captures plus faciles à lire, les nœuds ont été numérotés et réorganisés dans des **copies de présentation anonymisées**. Les connexions représentent celles des recettes du projet ; les fichiers historiques sont conservés. Les captures montrent des entrées existantes et ne prouvent pas une nouvelle exécution.
+
 | Nœud | Ce qu’il reçoit | Ce qu’il fait |
 |---|---|---|
 | `LoadImage` — pose | L’image extraite de Flow, éventuellement préparée sur fond vert. | Fournit l’autorité de pose et de cadrage. |
@@ -72,6 +78,10 @@ Les trois recettes de redessin sont conservées dans le dépôt :
 La recette Nano historique indique `gemini-3-pro-image-preview`. Le circuit Google direct utilise `gemini-3-pro-image`. Ces identifiants sont ceux des fichiers de l’expérience ; ils ne constituent pas un choix de version actualisé pour une nouvelle production.
 
 La référence est une indication donnée au modèle. Le graphe ne compare pas automatiquement les plis ou la coiffure avec les dessins précédents. Avoir les mêmes fils, la même consigne et la même ancre n’a donc pas suffi à stabiliser le style entre appels.
+
+![Gros plan sur le nœud GPT Image avec la consigne et les réglages](../images/comfyui/02_noeud_modele.png)
+
+*Détail du nœud 4 : la grande zone contient la consigne ; en bas figurent la qualité, la taille et le modèle. Le badge de crédits est une indication affichée par l’interface au moment de la capture, pas un débit constaté. « DEPR » signale un nœud historique marqué obsolète.*
 
 ## Comment les scripts pilotaient ComfyUI
 
@@ -122,6 +132,10 @@ Deux graphes correspondent à ce parcours :
 - [Préparation](../code/workflows/correctif_detail_preparation.json) : trois nœuds pour charger la frame, découper le gros plan et l’enregistrer.
 - [Réinsertion](../code/workflows/correctif_detail_reinsertion.json) : sept nœuds pour charger l’original, la retouche et le masque, remettre le détail à la bonne taille, le coller et enregistrer le candidat.
 
+![Graphe de réinsertion dans Comfy Desktop : frame originale, chaussure retouchée, masque et nœud de collage](../images/comfyui/03_correctif_vue.png)
+
+*Lecture de gauche à droite : l’image entière (1), le gros plan retouché (2) et le masque (3) alimentent la réinsertion (6). Le blanc du masque indique la zone à remplacer ; le noir protège le reste. Les nœuds 4 et 5 préparent la taille et le masque avant le collage.*
+
 Pour la pose 10, la source fait 1536 × 2752 pixels et le gros plan 320 × 400 pixels. Le masque adoucit le raccord et protège le fond vert ainsi que le bas de la chaussure. Ces coordonnées ne conviennent pas automatiquement à une autre pose.
 
 Le test exécuté a réutilisé une retouche déjà produite par l’outil intégré : les deux tâches ComfyUI ont réussi, sans nouvel appel payant, avec zéro différence hors masque dans le résultat contrôlé. Le brut original et la semelle ont été conservés. Ce test ne valide pas le rendu d’une nouvelle retouche Google : ce parcours est câblé, mais aucune nouvelle génération Google du gros plan n’a servi à valider ce bloc.
@@ -150,6 +164,12 @@ ComfyUI reste un atelier de préparation, de génération par Partner Nodes et d
 Dans la session vérifiée le 30 octobre 2026, Desktop 1.1.8 a été relié au serveur existant par une connexion nommée « Atelier animation papier », sur `127.0.0.1:8188`. Le serveur indiquait ComfyUI 0.38.2 et une interface 1.53.6. Cette opération n’a installé aucun paquet ni modèle.
 
 Le graphe historique GPT, le guide de chaussure et la réinsertion ont été ouverts dans l’interface. Sur chacun des deux blocs locaux, les aperçus des médias étaient visibles, mais le validateur signalait trois entrées `LoadImage` à renseigner. Aucun graphe n’a été exécuté pendant ce contrôle d’ouverture. Les fichiers n’ont pas été modifiés pour contourner cet avertissement ; il faut vérifier ou resélectionner les entrées avant une relance manuelle.
+
+Lors de la préparation des captures, la sélection des fichiers dans le panneau **Nodes** a supprimé les avertissements sur les copies de redessin et de réinsertion. Le guide de chaussure reste à renseigner. Cela confirme la sélection des médias dans l’interface, sans valider une nouvelle exécution.
+
+![Panneau Nodes avec les trois fichiers du correctif sélectionnés](../images/comfyui/04_selection_medias.png)
+
+*Dans le panneau « Nodes », chaque ligne **image** permet de choisir le fichier du nœud correspondant. Ici, l’original, le gros plan retouché et le masque sont sélectionnés.*
 
 Pour examiner les graphes :
 
